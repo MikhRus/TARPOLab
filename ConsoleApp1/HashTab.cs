@@ -19,12 +19,12 @@ namespace ConsoleApp1
                 items[i] = new Item<T>(i);
             }
         }
-        public void Add (T item)
+        public void Add (Wisdom item)
         {
             var key = GetHash(item);
             items[key].Nodes.Add(item);
         }
-        private int GetHash(T item)
+        private int GetHash(Wisdom item)
         {
             return item.GetHashCode() % items.Length;
         }
@@ -37,9 +37,9 @@ namespace ConsoleApp1
             {
                 if (!items[i].Nodes.Count.Equals(0))
                 {
-                    foreach (var node in items[i].Nodes)
+                    foreach (Wisdom node in items[i].Nodes)
                     {
-                        outp.WriteLine(node.Print());
+                        outp.WriteLine(node.Print());                      
                     }               
                 }
             }

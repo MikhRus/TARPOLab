@@ -29,7 +29,7 @@ namespace ConsoleApp1
                 Console.WriteLine("Введите имя файла на выход: ");
                 o_filename = Console.ReadLine();
                 o_filename += ".txt";
-                StreamReader inp = new StreamReader(i_filename);
+                StreamReader inp = new StreamReader(i_filename, Encoding.GetEncoding("windows-1251"));
                 while ((tmp = inp.ReadLine()) != null)
                 {
                     if (tmp[0] == '1') // поговорки

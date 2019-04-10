@@ -9,12 +9,12 @@ namespace ConsoleApp1
     class Item<T>
     {
         public int Key { get; set; }
-        public List<T> Nodes { get; set; }
+        public List<Wisdom> Nodes { get; set; }
 
         public Item(int key)
         {
             Key = key;
-            Nodes = new List<T>();
+            Nodes = new List<Wisdom>();
         }
         /*public string PrintItem()
         {
