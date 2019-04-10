@@ -11,7 +11,6 @@ namespace ConsoleApp1
         // Содержит общее свойство "сам текст"
 
         public abstract string Quote { get; }
-
         public abstract string Print();
     }
 }

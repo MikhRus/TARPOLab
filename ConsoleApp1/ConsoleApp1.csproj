@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HashTab.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Proverb.cs" />
     <Compile Include="Wisdom.cs" />
     <Compile Include="Vector.cs" />

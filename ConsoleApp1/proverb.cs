@@ -14,22 +14,22 @@ namespace ConsoleApp1
         {
             get
             {
-                return Quote;
+                return quote;
             }
         }
 
         public Proverb (string str)
         {
             string[] input_data = str.Split(' ');
-            country = input_data[1];
-            quote = input_data[2];
+            country = Convert.ToString(input_data[1]);
+            quote = Convert.ToString(input_data[2]);
         }
 
         // Функция вывода
 
         public override string Print()
         {
-            return String.Format("Страна: {0}\r\n Афоризм: {1}\r\n", country, quote);
+            return String.Format("Поговорка:\r\n Страна: {0}\r\n Афоризм: {1}\r\n", country, quote);
         }
     }
 }

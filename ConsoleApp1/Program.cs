@@ -11,12 +11,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            var hashTab = new HashTab<Wisdom>(10);
             // Создаем очередь
-            Vector input = new Vector();
+
             // Временные переменные для хранения записей
-            fuel Cr_temp;
-            gems Cl_temp;
-            metals F_temp;
+            Proverb Pr_temp;
+            Aphorism Ap_temp;
+
             // Имена входного и выходного файлов
             string i_filename, o_filename, tmp;
             // Обработка ошибок
@@ -31,29 +32,22 @@ namespace ConsoleApp1
                 StreamReader inp = new StreamReader(i_filename);
                 while ((tmp = inp.ReadLine()) != null)
                 {
-                    if (tmp[0] == '1') // Драгоценные камни
+                    if (tmp[0] == '1') // поговорки
 
                     {
                         //создаем и добавляем в очередь
-                        Cl_temp = new gems(tmp);
+                        Pr_temp = new Proverb(tmp);
+                        hashTab.Add(Pr_temp);
 
                     }
-                    if (tmp[0] == '2') // Металлы
+                    if (tmp[0] == '2') // афоризмы
                     {
-                        F_temp = new metals(tmp);
-                        input.Add(F_temp);
-                    }
-
-                    if (tmp[0] == '3') // Горючее
-                    {
-                        Cr_temp = new fuel(tmp);
-                        input.Add(Cr_temp);
+                        Ap_temp = new Aphorism(tmp);
+                        hashTab.Add(Ap_temp);
                     }
                 }
-                // Сортировка
-                input.Sort();
                 // Вывод
-                input.Print(o_filename);
+                hashTab.Print(o_filename);
             }
 
             catch (Exception e)

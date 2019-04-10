@@ -8,28 +8,28 @@ namespace ConsoleApp1
 {
     class Aphorism : Wisdom
     {
-        string author; // Название
-        string quote; // Рыночная стоимость
+        string author; // автор
+        string quote; // цитата
         public override string Quote
         {
             get
             {
-                return Quote;
+                return quote;
             }
         }
 
         public Aphorism(string str)
         {
             string[] input_data = str.Split(' ');
-            author = input_data[1];
-            quote = input_data[2];
+            author = Convert.ToString(input_data[1]);
+            quote = Convert.ToString(input_data[2]);
         }
 
         // Функция вывода
 
         public override string Print()
         {
-            return String.Format("Автор: {0}\r\n Афоризм: {1}\r\n", author, quote);
+            return String.Format("Афоризм:\r\n Автор: {0}\r\n Афоризм: {1}\r\n", author, quote);
         }
     }
 }
