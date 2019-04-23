@@ -12,5 +12,6 @@ namespace ConsoleApp1
 
         public abstract string Quote { get; }
         public abstract string Print();
+        public abstract int GetHash(int a);
     }
 }

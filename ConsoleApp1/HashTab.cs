@@ -14,20 +14,17 @@ namespace ConsoleApp1
         public HashTab(int size)
         {
             items = new Item<T>[size];
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 items[i] = new Item<T>(i);
             }
         }
-        public void Add (Wisdom item)
+        public void Add(Wisdom item)
         {
-            var key = GetHash(item);
+            var key = item.GetHash(items.Length);
             items[key].Nodes.Add(item);
         }
-        private int GetHash(Wisdom item)
-        {
-            return item.GetHashCode() % items.Length;
-        }
+
         public void Print(string o_filename)
         {
             //Открываем файл
@@ -39,8 +36,8 @@ namespace ConsoleApp1
                 {
                     foreach (Wisdom node in items[i].Nodes)
                     {
-                        outp.WriteLine(node.Print());                      
-                    }               
+                        outp.WriteLine(node.Print());
+                    }
                 }
             }
             outp.Close();

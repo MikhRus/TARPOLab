@@ -31,5 +31,11 @@ namespace ConsoleApp1
         {
             return String.Format("Афоризм:\r\n Автор: {0}\r\n Афоризм: {1}\r\n", author, quote);
         }
+
+        //функция получения хэша
+        public override int GetHash(int a)
+        {
+            return this.GetHashCode() % a;
+        }
     }
 }

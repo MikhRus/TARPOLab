@@ -16,9 +16,5 @@ namespace ConsoleApp1
             Key = key;
             Nodes = new List<Wisdom>();
         }
-        /*public string PrintItem()
-        {
-            return (string)Nodes.Value;
-        }*/
     }
 }
