@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Proverb:Wisdom
+    class Proverb : Wisdom
     {
-        string country; // Название
-        string quote; // Рыночная стоимость
+        string country; // страна
+        string quote; // цитата
         public override string Quote
         {
             get
@@ -18,7 +18,7 @@ namespace ConsoleApp1
             }
         }
 
-        public Proverb (string str)
+        public Proverb(string str)
         {
             string[] input_data = str.Split(' ');
             country = Convert.ToString(input_data[1]);
@@ -30,6 +30,12 @@ namespace ConsoleApp1
         public override string Print()
         {
             return String.Format("Поговорка:\r\n Страна: {0}\r\n Афоризм: {1}\r\n", country, quote);
+        }
+
+        //функция получения хэша
+        public override int GetHash(int a)
+        {
+            return this.GetHashCode() % a;
         }
     }
 }
