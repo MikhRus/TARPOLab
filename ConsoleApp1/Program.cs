@@ -47,7 +47,7 @@ namespace ConsoleApp1
                     }
                 }
                 // Вывод
-                hashTab.Print(o_filename);
+                hashTab.Out(o_filename);
             }
 
             catch (Exception e)

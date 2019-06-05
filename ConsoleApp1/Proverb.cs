@@ -20,14 +20,14 @@ namespace ConsoleApp1
 
         public Proverb(string str)
         {
-            string[] input_data = str.Split(' ');
+            string[] input_data = str.Split(';');
             country = Convert.ToString(input_data[1]);
             quote = Convert.ToString(input_data[2]);
         }
 
         // Функция вывода
 
-        public override string Print()
+        public override string Out()
         {
             return String.Format("Поговорка:\r\n Страна: {0}\r\n Афоризм: {1}\r\n", country, quote);
         }

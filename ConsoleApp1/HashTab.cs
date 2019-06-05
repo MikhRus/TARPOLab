@@ -25,7 +25,7 @@ namespace ConsoleApp1
             items[key].Nodes.Add(item);
         }
 
-        public void Print(string o_filename)
+        public void Out(string o_filename)
         {
             //Открываем файл
             StreamWriter outp = new StreamWriter(File.OpenWrite(o_filename));
@@ -36,7 +36,7 @@ namespace ConsoleApp1
                 {
                     foreach (Wisdom node in items[i].Nodes)
                     {
-                        outp.WriteLine(node.Print());
+                        outp.WriteLine(node.Out());
                     }
                 }
             }

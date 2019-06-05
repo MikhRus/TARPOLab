@@ -46,6 +46,7 @@
     <Compile Include="HashTab.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Proverb.cs" />
+    <Compile Include="Riddle.cs" />
     <Compile Include="Wisdom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

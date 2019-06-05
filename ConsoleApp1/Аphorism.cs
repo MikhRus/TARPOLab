@@ -8,8 +8,7 @@ namespace ConsoleApp1
 {
     class Aphorism : Wisdom
     {
-        string author; // автор
-        string quote; // цитата
+        string author, quote; // цитата
         public override string Quote
         {
             get
@@ -27,7 +26,7 @@ namespace ConsoleApp1
 
         // Функция вывода
 
-        public override string Print()
+        public override string Out()
         {
             return String.Format("Афоризм:\r\n Автор: {0}\r\n Афоризм: {1}\r\n", author, quote);
         }

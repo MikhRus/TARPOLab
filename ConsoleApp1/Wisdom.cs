@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,46 +11,36 @@ namespace ConsoleApp1
     {
         // Содержит общее свойство "сам текст"
 
-        public abstract string Quote { get; }
-        public abstract string Print();
+        public abstract void InData(StreamReader input);
+        public abstract void Out(StreamWriter output);
         public abstract int GetHash(int a);
     }
 
     public abstract class WisdomFactory
     {
-        //static 
         public WisdomFactory(int m)
         {
             this.next = top;
             top = this;
         }
-        static Wisdom Make(int key)
-        {
-            Wisdom wisdom = null;
-            WisdomFactory tmp = top;
 
-            while (tmp)
+        public static Wisdom Make(int key)
+        {
+            Wisdom w = null;
+            WisdomFactory tmp = top;
+            while (tmp!=null)
             {
-                wisdom = tmp.Create(key);
-                if (wisdom) return wisdom;
+                w = tmp.Create(key);
+                if (w!=null) return w;
                 tmp = tmp.next;
             }
+            return null;
         }
-        Wisdom In()
-        {
-            Wisdom ws = null;
-            int k;
-            ifst >> k;
-            ws = Make(k);
-            if (ws)
-                ws.InData(ifst);
-            return ws;
 
-        }
-        virtual Wisdom Create(int key) = 0;
+        public abstract Wisdom Create(int key);
 
         protected int mark;
-        protected static WisdomFactory top = null;
+        protected static WisdomFactory top;
         protected WisdomFactory next;
     }
 }
